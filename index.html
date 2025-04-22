@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Course</title>
+    <script src="./vue.js"></script>
+    <style>
+        .verde {
+            background: green
+        }
+
+        .azul {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <a :href="site" :class="cor">teste</a>
+        <input type="text" :class="classCondition ? 'verde' : backgroundColor">
+        {{ somar() }}
+        {{ subtrair() }}
+        {{printarMensagem()}}
+        <button @click="mensagemAlerta($event)">Botão</button>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                site: "https://teste.com",
+                cor: "verde",
+                backgroundColor: 'azul',
+                classCondition: false
+            },
+            methods: {
+                somar: function somar() {
+                    return 7+3;
+                },
+                subtrair: () => {
+                    return 7 - 3;
+                },
+                printarMensagem() {
+                    return this.mensagem;
+                },
+                mensagemAlerta(event) {
+                    console.log(event);
+                }
+            }
+        });
+
+        console.log(vm);
+    </script>
+</body>
+</html>
