@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a href="https://google.com.br" @click.once="previnirComportamentoPadrao()" target="_blank">Link</a>
+        <br>
+        Mensagem: {{ msg }}
+        <br>
+        <button @click.once="cliques++">Botao</button>
+        <p>Cliques: {{ cliques }}</p>
+        <hr>
+        <form @submit.prevent.once="previnirComportamentoPadraoUmaVez()">
+            <button type="submit">Enviar</button>
+        </form>
+        <p>Prevenindo o comportamento padrão somente uma vez: {{ msg }} </p>
+        <hr>
+        <input type="text" @keyup.Shift.Enter="capturandoTeclas($event)">
+        <p>Teclas: {{ teclas }}</p>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+             msg: '',
+             cliques: 0,
+             teclas: ''
+            },
+            methods: {
+               previnirComportamentoPadrao() {
+                this.msg = 'Comportamento padrão';
+               },
+               previnirComportamentoPadraoUmaVez() {
+                this.msg = 'Previnindo comportamento padrão uma vez';
+               },
+               capturandoTeclas(event) {
+                this.teclas += event.key;
+               }
+            }
+        });
+    </script>
+</body>
+</html>
