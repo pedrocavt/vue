@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Course</title>
+    <script src="./vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" id="imputText">
+        <div id="bloco">Conteudo da div</div>
+        <button @click="selecionandoElementoFilho()">Botão</button>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+              
+            },
+            methods: {
+                selecionandoElementoFilho() {
+                    console.log(imputText.value);
+                    console.log(bloco.innerHTML)
+                }
+            }
+        });
+
+        console.log(vm);
+    </script>
+</body>
+</html>
