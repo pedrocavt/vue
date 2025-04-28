@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Course</title>
+    <script src="./vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <div v-html="elementoHTML">
+            <h1>Titulo texto ajuda</h1>
+            <p>Texto do texto ajuda</p>
+        </div>
+
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                elementoHTML: '<p>Elemento HTML, <b>Site:</b> <a href="https://google.com.br">google</a></p>'
+            },
+            methods: {
+
+            }
+        });
+
+        console.log(vm);
+    </script>
+</body>
+</html>
