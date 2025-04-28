@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Course</title>
+    <script src="./vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <p @mouseover="exibirTexto = true" @mouseout="exibirTexto = false">Exibir texto ajuda</p>
+        <div v-show="exibirTexto">
+            <h1>Titulo texto ajuda</h1>
+            <p>Texto do texto ajuda</p>
+        </div>
+
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                exibirTexto: false
+            },
+            methods: {
+
+            }
+        });
+
+        console.log(vm);
+    </script>
+</body>
+</html>
