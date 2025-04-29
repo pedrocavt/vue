@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Course</title>
+    <script src="./vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <p v-once>Saldo inical: {{saldo}}</p>
+        <p>Saldo final: {{saldo}}</p>
+        Creditar: <input  type="number" @keyup.Enter="creditar()" id='creditar'>
+        Debitar: <input type="number" @keyup.Enter="debitar()" id="debitar">
+
+
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                saldo: 1000,
+            },
+            methods: {
+                creditar(event) {
+                    console.log();
+                    this.saldo += parseFloat(creditar.value);
+                },
+                debitar() {
+                    this.saldo -= parseFloat(debitar.value);
+                },
+            }
+        });
+
+        console.log(vm);
+    </script>
+</body>
+</html>
