@@ -31,6 +31,19 @@
                 </tr>
             </tbody>
         </table>
+        <hr>
+
+        <ul>
+            <li v-for="post in posts"  :key="post.id" style="border: 1px solid #000;">
+                <div>
+                    {{post.content}}
+                    <hr>
+                    <input type="text">
+                </div>
+            </li>
+        </ul>
+
+        <button @click="misturaPosts()">Mistura Posts</button>
 
     </div>
 
@@ -48,10 +61,23 @@
                     nome: 'PHP',
                     descricao: 'muito BACANUDO'
                 }
-               }
+               },
+               posts: [
+                { id: 1, content: 'publicacao 1'},
+                { id: 2, content: 'publicacao 2'},
+                { id: 3, content: 'publicacao 3'},
+                ]
             },
             methods: {
+                misturaPosts() {
+                    let misturado = [];
 
+                    misturado[0] = this.posts[2];
+                    misturado[1] = this.posts[0];
+                    misturado[2] = this.posts[1];
+
+                    this.posts = misturado;
+                }
             }
         });
 
